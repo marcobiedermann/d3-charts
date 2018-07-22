@@ -74,15 +74,17 @@ class D3LineChart {
     this.svg.append('path')
       .attr('class', 'd3-line-chart__line');
 
-    this.svg.append('g')
-      .attr('class', 'd3-line-chart__axis d3-line-chart__axis--x')
-      .attr('transform', `translate(0, ${innerHeight + axis.padding})`)
-      .call(this.xAxis);
+    if (axis) {
+      this.svg.append('g')
+        .attr('class', 'd3-line-chart__axis d3-line-chart__axis--x')
+        .attr('transform', `translate(0, ${innerHeight + axis.padding})`)
+        .call(this.xAxis);
 
-    this.svg.append('g')
-      .attr('class', 'd3-line-chart__axis d3-line-chart__axis--y')
-      .attr('transform', `translate(${-axis.padding}, 0)`)
-      .call(this.yAxis);
+      this.svg.append('g')
+        .attr('class', 'd3-line-chart__axis d3-line-chart__axis--y')
+        .attr('transform', `translate(${-axis.padding}, 0)`)
+        .call(this.yAxis);
+    }
   }
 
   renderAxis() {
@@ -112,10 +114,17 @@ class D3LineChart {
   }
 
   render(data) {
+    const {
+      axis,
+    } = this;
+
     this.scaleX.domain(d3.extent(data, data => data.date));
     this.scaleY.domain(d3.extent(data, data => data.value));
 
-    this.renderAxis();
+    if (axis) {
+      this.renderAxis();
+    }
+
     this.renderLine(data);
   }
 
