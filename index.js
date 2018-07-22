@@ -32,8 +32,17 @@ class D3LineChart {
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
   }
 
-  render() {
+  renderAxis() {
 
+  }
+
+  renderLine() {
+
+  }
+
+  render() {
+    this.renderAxis();
+    this.renderLine();
   }
 
   update() {
