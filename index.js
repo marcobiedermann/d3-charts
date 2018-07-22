@@ -68,8 +68,8 @@ class D3LineChart {
 
     this.line = d3.line()
       .curve(d3.curveBasis)
-      .x(data => this.scaleX(data.date))
-      .y(data => this.scaleY(data.value));
+      .x(data => this.scaleX(data[0]))
+      .y(data => this.scaleY(data[1]));
 
     this.svg.append('path')
       .attr('class', 'd3-line-chart__line');
@@ -118,8 +118,8 @@ class D3LineChart {
       axis,
     } = this;
 
-    this.scaleX.domain(d3.extent(data, data => data.date));
-    this.scaleY.domain(d3.extent(data, data => data.value));
+    this.scaleX.domain(d3.extent(data, data => data[0]));
+    this.scaleY.domain(d3.extent(data, data => data[1]));
 
     if (axis) {
       this.renderAxis();
