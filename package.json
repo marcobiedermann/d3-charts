@@ -1,5 +1,5 @@
 {
-  "name": "d3-line-chart",
+  "name": "@marcobiedermann/d3-line-chart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
