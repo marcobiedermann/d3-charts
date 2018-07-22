@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/marcobiedermann/d3-line-chart/issues"
   },
-  "homepage": "https://github.com/marcobiedermann/d3-line-chart#readme"
+  "homepage": "https://github.com/marcobiedermann/d3-line-chart#readme",
+  "dependencies": {
+    "d3": "^5.5.0"
+  }
 }
