@@ -11,6 +11,9 @@ class D3LineChart {
         right: 0,
         top: 15,
       },
+      axis: {
+        padding: 5,
+      },
     };
 
     this.element = element;
@@ -38,6 +41,7 @@ class D3LineChart {
       width,
       height,
       margin,
+      axis,
     } = this;
     const [innerWidth, innerHeight] = this.dimensions();
 
@@ -48,23 +52,51 @@ class D3LineChart {
       .append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    this.svg.append('path')
-      .attr('class', 'd3-line-chart__line');
-
     this.scaleX = d3.scaleTime()
       .range([0, innerWidth]);
 
     this.scaleY = d3.scaleLinear()
       .range([innerHeight, 0]);
 
+    this.xAxis = d3.axisBottom(this.scaleX)
+      .ticks(10)
+      .tickPadding(8);
+
+    this.yAxis = d3.axisLeft(this.scaleY)
+      .ticks(10)
+      .tickPadding(8);
+
     this.line = d3.line()
       .curve(d3.curveBasis)
       .x(data => this.scaleX(data.date))
       .y(data => this.scaleY(data.value));
+
+    this.svg.append('path')
+      .attr('class', 'd3-line-chart__line');
+
+    this.svg.append('g')
+      .attr('class', 'd3-line-chart__axis d3-line-chart__axis--x')
+      .attr('transform', `translate(0, ${innerHeight + axis.padding})`)
+      .call(this.xAxis);
+
+    this.svg.append('g')
+      .attr('class', 'd3-line-chart__axis d3-line-chart__axis--y')
+      .attr('transform', `translate(${-axis.padding}, 0)`)
+      .call(this.yAxis);
   }
 
   renderAxis() {
+    const {
+      svg,
+      xAxis,
+      yAxis,
+    } = this;
 
+    svg.select('.d3-line-chart__axis--x')
+      .call(xAxis);
+
+    svg.select('.d3-line-chart__axis--y')
+      .call(yAxis);
   }
 
   renderLine(data) {
