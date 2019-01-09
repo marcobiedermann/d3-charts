@@ -1,5 +1,7 @@
 # D3 Line Chart
 
+[![dependencies Status](https://david-dm.org/marcobiedermann/d3-line-chart/status.svg)](https://david-dm.org/marcobiedermann/d3-line-chart)
+
 ## Install
 
 Install package using `npm`
