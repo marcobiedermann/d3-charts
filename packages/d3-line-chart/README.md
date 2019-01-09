@@ -1,6 +1,6 @@
 # D3 Line Chart
 
-[![dependencies Status](https://david-dm.org/marcobiedermann/d3-line-chart/status.svg)](https://david-dm.org/marcobiedermann/d3-line-chart)
+[![dependencies Status](https://david-dm.org/marcobiedermann/d3-charts/status.svg?path=packages/d3-line-chart)](https://david-dm.org/marcobiedermann/d3-charts?path=packages/d3-line-chart)
 
 ## Install
 
