@@ -1,23 +1,28 @@
 {
-  "name": "@marcobiedermann/d3-line-chart",
+  "name": "d3-charts",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "index.js",
+  "devDependencies": {
+    "lerna": "^3.10.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcobiedermann/d3-line-chart.git"
+    "url": "git+https://github.com/marcobiedermann/d3-charts.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "charts",
+    "d3",
+    "data-visualisation",
+    "graphs"
+  ],
+  "author": "Marco Biedermann",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marcobiedermann/d3-line-chart/issues"
+    "url": "https://github.com/marcobiedermann/d3-charts/issues"
   },
-  "homepage": "https://github.com/marcobiedermann/d3-line-chart#readme",
-  "dependencies": {
-    "d3": "^5.7.0"
-  }
+  "homepage": "https://github.com/marcobiedermann/d3-charts#readme"
 }
