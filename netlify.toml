@@ -1,2 +1,3 @@
 [build]
-  publish = "example"
+  command = "npm run build-storybook"
+  publish = "storybook-static"

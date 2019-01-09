@@ -4,10 +4,17 @@
   "private": true,
   "description": "",
   "devDependencies": {
+    "@storybook/react": "^4.1.6",
+    "@storybook/addon-actions": "^4.1.6",
+    "@storybook/addon-links": "^4.1.6",
+    "@storybook/addons": "^4.1.6",
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5",
     "lerna": "^3.10.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 9009 -s public"
   },
   "repository": {
     "type": "git",
