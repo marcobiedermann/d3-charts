@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/marcobiedermann/d3-line-chart#readme",
   "dependencies": {
-    "d3": "^5.7.0"
+    "d3": "^5.9.1"
   }
 }
