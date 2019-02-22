@@ -19,9 +19,11 @@
     "react-scripts": "^2.1.5"
   },
   "scripts": {
+    "bootstrap": "lerna bootstrap --hoist",
     "build-storybook": "build-storybook -s public",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:js",
+    "postinstall": "npm run bootstrap",
     "storybook": "start-storybook -p 9009 -s public",
     "test": "npm run lint"
   },
