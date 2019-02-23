@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { Component } from 'react';
+import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
-import D3LineChart from '..';
+import LineChart from '../react';
 
 function generateRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,22 +21,8 @@ function generateData(n) {
   return data;
 }
 
-class LineChart extends Component {
-  componentDidMount() {
-    this.chart = new D3LineChart(this.refs.chart);
-
-    this.chart.render(generateData(12));
-  }
-
-  render() {
-    return (
-      <div ref="chart" />
-    );
-  }
-}
-
 storiesOf('Line Chart', module)
   .addDecorator(withInfo)
   .add('default', () => (
-    <LineChart />
+    <LineChart data={generateData(12)} />
   ));
