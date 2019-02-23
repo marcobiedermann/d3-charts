@@ -4,9 +4,12 @@ import D3LineChart from '..';
 
 class LineChart extends Component {
   componentDidMount() {
-    const { data } = this.props;
+    const { data, width, height } = this.props;
 
-    this.chart = new D3LineChart(this.refs.chart);
+    this.chart = new D3LineChart(this.refs.chart, {
+      width,
+      height,
+    });
 
     this.chart.render(data);
   }
@@ -23,10 +26,14 @@ LineChart.propTypes = {
     PropTypes.instanceOf(Date),
     PropTypes.number,
   ])),
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 LineChart.defaultProps = {
   data: [],
+  width: 500,
+  height: 370,
 };
 
 export default LineChart;
