@@ -16,8 +16,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "lerna": "^3.13.0",
-    "react-scripts": "^2.1.5"
+    "lerna": "^3.13.0"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
@@ -43,5 +42,6 @@
   "bugs": {
     "url": "https://github.com/marcobiedermann/d3-charts/issues"
   },
-  "homepage": "https://github.com/marcobiedermann/d3-charts#readme"
+  "homepage": "https://github.com/marcobiedermann/d3-charts#readme",
+  "dependencies": {}
 }
