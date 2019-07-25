@@ -13,10 +13,7 @@ function generateData(n) {
   let index = n;
 
   while (index >= 0) {
-    data.push([
-      new Date(Date.now() - (index * 1000 * 60 * 60 * 24)),
-      generateRandomInteger(0, 12),
-    ]);
+    data.push([new Date(Date.now() - index * 1000 * 60 * 60 * 24), generateRandomInteger(0, 12)]);
     index -= 1;
   }
 
@@ -25,6 +22,4 @@ function generateData(n) {
 
 storiesOf('Line Chart', module)
   .addDecorator(withInfo)
-  .add('default', () => (
-    <LineChart data={generateData(12)} />
-  ));
+  .add('default', () => <LineChart data={generateData(12)} />);

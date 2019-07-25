@@ -21,17 +21,12 @@ class LineChart extends Component {
   }
 
   render() {
-    return (
-      <div ref={this.chart} />
-    );
+    return <div ref={this.chart} />;
   }
 }
 
 LineChart.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.instanceOf(Date),
-    PropTypes.number,
-  ])),
+  data: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number])),
   width: PropTypes.number,
   height: PropTypes.number,
 };

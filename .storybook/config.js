@@ -1,9 +1,7 @@
 import { configure } from '@storybook/react';
 
 function loadStories() {
-  const contexts = [
-    require.context('../packages', true, /stories.*\.jsx$/),
-  ];
+  const contexts = [require.context('../packages', true, /stories.*\.jsx$/)];
 
   contexts.forEach(context => {
     context
