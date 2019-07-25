@@ -118,8 +118,8 @@ class D3LineChart {
       axis,
     } = this;
 
-    this.scaleX.domain(d3.extent(data, data => new Date(data[0])));
-    this.scaleY.domain(d3.extent(data, data => data[1]));
+    this.scaleX.domain(d3.extent(data, _data => new Date(_data[0])));
+    this.scaleY.domain(d3.extent(data, _data => _data[1]));
 
     if (axis) {
       this.renderAxis();

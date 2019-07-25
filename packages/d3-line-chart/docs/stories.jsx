@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import LineChart from '../react';
 
 function generateRandomInteger(min, max) {
@@ -10,12 +10,14 @@ function generateRandomInteger(min, max) {
 
 function generateData(n) {
   const data = [];
+  let index = n;
 
-  while (n--) {
+  while (index >= 0) {
     data.push([
-      new Date(Date.now() - (n * 1000 * 60 * 60 * 24)),
+      new Date(Date.now() - (index * 1000 * 60 * 60 * 24)),
       generateRandomInteger(0, 12),
     ]);
+    index -= 1;
   }
 
   return data;

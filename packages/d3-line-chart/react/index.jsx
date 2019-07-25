@@ -3,10 +3,16 @@ import React, { Component } from 'react';
 import D3LineChart from '..';
 
 class LineChart extends Component {
+  constructor(props) {
+    super(props);
+
+    this.chart = React.createRef();
+  }
+
   componentDidMount() {
     const { data, width, height } = this.props;
 
-    this.chart = new D3LineChart(this.refs.chart, {
+    this.chart = new D3LineChart(this.chart.current, {
       width,
       height,
     });
@@ -16,7 +22,7 @@ class LineChart extends Component {
 
   render() {
     return (
-      <div ref="chart" />
+      <div ref={this.chart} />
     );
   }
 }
