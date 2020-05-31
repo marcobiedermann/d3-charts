@@ -3,10 +3,10 @@ import { configure } from '@storybook/react';
 function loadStories() {
   const contexts = [require.context('../packages', true, /stories.*\.jsx$/)];
 
-  contexts.forEach(context => {
+  contexts.forEach((context) => {
     context
       .keys()
-      .filter(key => !key.includes('node_modules'))
+      .filter((key) => !key.includes('node_modules'))
       .forEach(context);
   });
 }

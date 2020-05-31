@@ -44,21 +44,15 @@ class D3LineChart {
 
     this.scaleY = d3.scaleLinear().range([innerHeight, 0]);
 
-    this.xAxis = d3
-      .axisBottom(this.scaleX)
-      .ticks(10)
-      .tickPadding(8);
+    this.xAxis = d3.axisBottom(this.scaleX).ticks(10).tickPadding(8);
 
-    this.yAxis = d3
-      .axisLeft(this.scaleY)
-      .ticks(10)
-      .tickPadding(8);
+    this.yAxis = d3.axisLeft(this.scaleY).ticks(10).tickPadding(8);
 
     this.line = d3
       .line()
       .curve(d3.curveBasis)
-      .x(data => this.scaleX(new Date(data[0])))
-      .y(data => this.scaleY(data[1]));
+      .x((data) => this.scaleX(new Date(data[0])))
+      .y((data) => this.scaleY(data[1]));
 
     this.svg.append('path').attr('class', 'd3-line-chart__line');
 
@@ -88,18 +82,14 @@ class D3LineChart {
   renderLine(data) {
     const { svg, line } = this;
 
-    svg
-      .select('.d3-line-chart__line')
-      .data([data])
-      .transition()
-      .attr('d', line);
+    svg.select('.d3-line-chart__line').data([data]).transition().attr('d', line);
   }
 
   render(data) {
     const { axis } = this;
 
-    this.scaleX.domain(d3.extent(data, _data => new Date(_data[0])));
-    this.scaleY.domain(d3.extent(data, _data => _data[1]));
+    this.scaleX.domain(d3.extent(data, (_data) => new Date(_data[0])));
+    this.scaleY.domain(d3.extent(data, (_data) => _data[1]));
 
     if (axis) {
       this.renderAxis();
