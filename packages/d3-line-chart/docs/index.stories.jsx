@@ -1,6 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { withInfo } from '@storybook/addon-info';
-import { storiesOf } from '@storybook/react';
 import React from 'react';
 import LineChart from '../react';
 
@@ -20,6 +18,9 @@ function generateData(n) {
   return data;
 }
 
-storiesOf('Line Chart', module)
-  .addDecorator(withInfo)
-  .add('default', () => <LineChart data={generateData(12)} />);
+export default {
+  title: 'Line Chart',
+  component: LineChart,
+};
+
+export const Default = () => <LineChart data={generateData(12)} />;
