@@ -8,6 +8,25 @@ Collection of simple charts made with [d3.js](https://d3js.org/).
 ## Table of Contents
 
 - [License](#license)
+- [Usage](#usage)
+
+## Usage
+
+### Format
+
+Format code using [Prettier](https://prettier.io/).
+
+```sh
+npm run format
+```
+
+### Linting
+
+Lint code using [ESLint](https://eslint.org/).
+
+```sh
+npm run lint
+```
 
 ## License
 
