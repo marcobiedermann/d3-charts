@@ -43,7 +43,7 @@
     "graphs"
   ],
   "author": "Marco Biedermann",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcobiedermann/d3-charts/issues"
   },
