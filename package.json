@@ -25,7 +25,7 @@
     "build-storybook": "build-storybook -s public",
     "fix:js": "npm run lint:js -- --fix",
     "fix": "npm run fix:js",
-    "format": "prettier --write '**/*.{css,html,js,jsx,json,md,yml,yaml}'",
+    "format": "prettier --write .",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:js",
     "postinstall": "npm run bootstrap",
