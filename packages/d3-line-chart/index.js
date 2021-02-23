@@ -3,17 +3,17 @@ import * as d3 from 'd3';
 class D3LineChart {
   constructor(element, options) {
     const defaults = {
+      axis: {
+        padding: 5,
+      },
       height: 370,
-      width: 500,
       margin: {
         bottom: 35,
         left: 60,
         right: 0,
         top: 15,
       },
-      axis: {
-        padding: 5,
-      },
+      width: 500,
     };
 
     this.element = element;

@@ -19,7 +19,6 @@
   "homepage": "https://github.com/marcobiedermann/d3-line-chart#readme",
   "dependencies": {
     "d3": "^6.2.0",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1"
   }
 }
