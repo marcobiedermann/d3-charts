@@ -1,29 +1,24 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import D3LineChart from '..';
 
-class LineChart extends Component {
-  constructor(props) {
-    super(props);
+const LineChart = (props) => {
+  const { data, width, height } = props;
+  const chart = useRef();
 
-    this.chart = React.createRef();
-  }
+  useEffect(() => {
+    if (data && chart.current) {
+      const d3lineChart = new D3LineChart(chart.current, {
+        width,
+        height,
+      });
 
-  componentDidMount() {
-    const { data, width, height } = this.props;
+      d3lineChart.render(data);
+    }
+  }, [data, chart.current]);
 
-    this.chart = new D3LineChart(this.chart.current, {
-      width,
-      height,
-    });
-
-    this.chart.render(data);
-  }
-
-  render() {
-    return <div ref={this.chart} />;
-  }
-}
+  return <div ref={chart} />;
+};
 
 LineChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number])),

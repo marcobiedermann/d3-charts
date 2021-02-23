@@ -23,6 +23,6 @@ export default {
   component: LineChart,
 };
 
-const Template = (args) => <LineChart data={generateData(12)} {...args} />;
+const Template = (args) => <LineChart {...args} data={generateData(12)} />;
 
 export const Default = Template.bind({});
